@@ -1,0 +1,31 @@
+.btn-primary{
+    background: none!important;
+    border: none!important;
+}
+.bg-dark {
+    background: linear-gradient(90deg, #144980 26.93%, #2980B9 100%);
+}
+#offcanvasExample{
+    min-width: 225px;
+    max-width: 225px;
+    min-height: 100vh;
+}
+.offcanvas-header{
+    position: relative;
+    height: 35px;
+    border-bottom: solid #E4E4E4 1px;
+}
+.offcanvas-header button{
+    position: absolute;
+    transform: translate(100%, -25%);
+    left: 100%;
+    opacity: 1;
+}
+.offcanvas-header img{
+    width: 70%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    transform: translate(50%, -15%);
+    left: -20%;
+}
