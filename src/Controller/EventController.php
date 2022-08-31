@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Event;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,15 +14,11 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-
+use App\Entity\Event;
 use App\Service\FileService;
-
-
-
 
 class EventController extends AbstractController
 {
-
     /**
      * @Route("/event/{id}", methods={"GET"}, name="get_event")
      */
