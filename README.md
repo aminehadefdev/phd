@@ -7,4 +7,4 @@
 - 5: ```php bin/console doctrine:database:create```
 - 6: ```php bin/console doctrine:migrations:migrate```
 - 7: ```symfony server:start```
-- 8: ```yarn run dev-server``` or ```npm run dev-server
+- 8: ```yarn run dev-server``` or ```npm run dev-server```
