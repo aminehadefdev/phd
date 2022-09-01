@@ -16,6 +16,9 @@ class FileService
         $this->extentionsAccept = $extentionsAccept;
     }
 
+    /**
+    * @return STRING || false  
+    */
     public function upload(UploadedFile $file)
     {
         if(in_array($file->guessExtension(), $this->extentionsAccept())){
@@ -35,12 +38,12 @@ class FileService
         return false;
     }
 
-    public function getTargetDirectory()
+    private function getTargetDirectory()
     {
         return $this->targetDirectory;
     }
 
-    public function extentionsAccept()
+    private function extentionsAccept()
     {
         return $this->extentionsAccept;
     }

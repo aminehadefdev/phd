@@ -2,8 +2,6 @@
 
 import Nav from "./components/Nav.vue"
 
-
-
 export default {
     data() {
         return {};
@@ -11,9 +9,6 @@ export default {
     methods: {},
     components: { Nav }
 }
-
-
-
 </script>
 
 <template>

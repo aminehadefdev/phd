@@ -27,7 +27,7 @@ export default {
     </div>
     <div class="offcanvas-body">
       <div v-for="item in this.getConfig()">
-        <ItemSideBare :href="item.href" :svg="item.svg" :name="item.name" :id="item.id" :options="item.options"></ItemSideBare>
+        <ItemSideBare :item="item"></ItemSideBare>
       </div>
     </div>
   </div>
