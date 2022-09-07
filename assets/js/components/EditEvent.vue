@@ -1,6 +1,6 @@
 <script>
 import "../../styles/AddEvent.css"
-import axios from "axios";
+import Request from "../utiles/Request"
 
 
 export default {
@@ -13,30 +13,13 @@ export default {
     },
     methods: {
         EditEvent() {
-            try {
-                const onThen = (response) => {
-                    this.event = response.data[0]
-                }
-                const onCatch = (err) => {
-                    console.log(err);
-                }
-                var data = new FormData()
-                data.append("title", this.event.title);
-                data.append("organizer", this.event.organizer);
-                data.append("type", this.event.type);
-                data.append("locality", this.event.locality);
-                data.append("date", this.event.date);
-                data.append("image", this.event.image);
-                if(this.event.file !== null){
-                    data.append("file", this.event.file[0]);
-                }
-                axios.post("http://localhost:8000/event/" + this.event.id, data)
-                    .then(onThen)
-                    .catch(onCatch);
-
-            } catch (error) {
-                console.log(error);
+            const onThen = (response) => {
+                this.event = response.data[0]
             }
+            const onCatch = (err) => {
+                console.log(err);
+            }
+            Request.putEvent(this.event, onThen, onCatch)
         }
     },
     components: {},
@@ -93,7 +76,7 @@ export default {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button @click="EditEvent" type="submit" class="btn btn-success">Submit</button>
+                    <button data-bs-dismiss="modal" @click="EditEvent" type="submit" class="btn btn-success">Submit</button>
                 </div>
             </div>
         </div>
