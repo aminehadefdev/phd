@@ -15,6 +15,7 @@ export default {
         EditEvent() {
             const onThen = (response) => {
                 this.event = response.data[0]
+                
             }
             const onCatch = (err) => {
                 console.log(err);
