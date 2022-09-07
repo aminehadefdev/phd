@@ -1,6 +1,7 @@
 <script>
 import "../../styles/AddEvent.css"
-import axios from "axios";
+//import axios from "axios";
+import Request from "../utiles/Request"
 
 
 export default {
@@ -19,29 +20,13 @@ export default {
     },
     methods: {
         createEvent() {
-            var onThen = (response)=>{
-                console.log(response.data[0]);
-                    this.addInContenerCard(response.data[0])
+            var onThen = (response) => {
+                this.addInContenerCard(response.data[0])
             }
-            var onCatch = (error)=>{
+            var onCatch = (error) => {
                 console.log(error);
             }
-            try {
-                var data = new FormData();
-                data.append("image", this.event.file[0]);
-                data.append("title", this.event.title);
-                data.append("organizer", this.event.organizer);
-                data.append("type", this.event.type);
-                data.append("locality", this.event.locality);
-                data.append("date", this.event.date);
-                data.append("image", this.event.file[0].name);
-
-                axios.post("http://localhost:8000/event", data)
-                .then(onThen)
-                .catch(onCatch)
-            } catch (error) {
-                console.log(error.message);
-            }
+            Request.postEvent(this.event, onThen, onCatch)
         }
     },
     components: {},
