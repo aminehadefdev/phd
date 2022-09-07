@@ -14,4 +14,34 @@ class DefaultController extends AbstractController{
     public function index() : Response{
         return $this->render("app.html.twig");
     }
+    /**
+     * @Route("/findEvent", name="findEvent")
+     */
+    public function findEvent_vue() : Response{
+        return $this->render("app.html.twig");
+    }
+    /**
+     * @Route("/inbox", name="inbox")
+    */
+    public function inbox_vue() : Response{
+        return $this->render("app.html.twig");
+    }
+    /**
+     * @Route("/companies", name="companies")
+    */
+    public function companies_vue() : Response{
+        return $this->render("app.html.twig");
+    }
+    /**
+     * @Route("/findJob", name="findJob")
+     */
+    public function find_job_vue() : Response{
+        return $this->render("app.html.twig");
+    }
+    /**
+     * @Route("/publications", name="publications")
+     */
+    public function find_publications() : Response{
+        return $this->render("app.html.twig");
+    }
 }
